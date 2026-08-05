@@ -1,0 +1,386 @@
+# ==========================================
+# Python & Virtual Environment
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+venv-*/
+envs/
+
+# ==========================================
+# IDE & Editor Files
+# ==========================================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.vscode-test/
+.history/
+
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.swp
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# ==========================================
+# Environment & Secrets
+# ==========================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+.env.test
+
+# Secrets and sensitive data
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+secrets/
+secrets.yaml
+config/secrets.yaml
+credentials.json
+*.secret
+*.private
+
+# ==========================================
+# Database Files
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql
+*.pgsql
+*.backup
+*.bak
+*.pgdump
+
+# PostgreSQL specific
+pgdata/
+postgresql.conf
+pg_hba.conf
+pg_ident.conf
+recovery.conf
+
+# Database migration files (if you want to ignore generated ones)
+alembic/versions/*.pyc
+alembic/versions/*.pyo
+
+# ==========================================
+# Backup Files
+# ==========================================
+*.backup
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.gz
+*.bz2
+backups/
+backup_*/
+backup-*
+*.sql.zip
+*.sql.gz
+pg_dump_*
+*.bak.sql
+
+# ==========================================
+# Logs & Temporary Files
+# ==========================================
+logs/
+*.log
+*.log.*
+*.pid
+*.seed
+*.pid.lock
+logfile
+access.log
+error.log
+debug.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.cache
+.cache/
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+.tox/
+noxfile.py
+coverage/
+coverage.lcov
+*.test
+*.spec
+
+# ==========================================
+# Jupyter Notebooks (if any)
+# ==========================================
+.ipynb_checkpoints/
+*.ipynb
+*.html
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+[Dd]esktop.ini
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Linux
+.*.un~
+.*.swp
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+*~
+
+# ==========================================
+# Docker & Containerization
+# ==========================================
+.docker/
+docker-compose.override.yml
+docker-compose.*.yml
+docker-compose.*.yaml
+.Dockerfile
+docker-compose.override.yaml
+container-data/
+*.container
+
+# ==========================================
+# Project Specific (PostgreSQL Backup Recovery)
+# ==========================================
+# Backup files from your recovery system
+recovery_system/
+recovery_*/
+recovery_backups/
+pg_restore_*
+recovery-*.sql
+restore-*.sql
+dump-*.sql
+backup-*.tar
+
+# Uploaded files (if your app handles file uploads)
+uploads/
+uploads_*/
+media/
+media_*/
+
+# Large data files
+*.h5
+*.pkl
+*.pickle
+*.pth
+*.ckpt
+*.pb
+*.hdf5
+*.npy
+*.npz
+*.parquet
+*.arrow
+
+# ==========================================
+# Documentation & Build
+# ==========================================
+docs/_build/
+docs/_static/
+docs/_templates/
+site/
+*.whl
+*.wheel
+*.py3-none-any.whl
+
+# ==========================================
+# Deployment & Configuration
+# ==========================================
+*.local
+*.example
+*.sample
+*.template
+
+# Ansible
+*.retry
+ansible/inventory_*
+
+# Kubernetes
+*.secret.yaml
+*.secret.yml
+kubeconfig
+kubeconfig-local
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+terraform.tfvars.json
+
+# ==========================================
+# Miscellaneous
+# ==========================================
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Profiling data
+*.prof
+*.gcda
+*.gcno
+
+# Coverage.py
+!coverage.xml
+
+# Django (if you ever add it)
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pdm
+.pdm.toml
+.pdm-python
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
