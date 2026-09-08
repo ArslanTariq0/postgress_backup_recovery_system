@@ -1,16 +1,40 @@
+from contextlib import asynccontextmanager
+
 from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 import models
 import schemas
 from auth import create_access_token, get_current_user, hash_password, verify_password
-from database import Base, SessionLocal, engine, get_db
+from database import Base, engine, get_db
+from endpoints import router as api_router
+from scheduler import start_scheduler, stop_scheduler
 
-# Creates the "users" table if it doesn't exist yet
+# Creates all tables (users, database_connections, backup_schedules, backups, restore_jobs)
+# if they don't exist yet. For production use, prefer Alembic migrations instead.
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="FastAPI Auth Starter")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    start_scheduler()  # begins polling for due backup schedules every SCHEDULER_INTERVAL_MINUTES
+    yield
+    stop_scheduler()
+
+
+app = FastAPI(title="PostgreSQL Backup & Recovery System", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # tighten this to your frontend's origin(s) in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(api_router)
 
 
 @app.post("/signup", response_model=schemas.UserOut, status_code=status.HTTP_201_CREATED)
@@ -53,4 +77,4 @@ def read_current_user(current_user: models.User = Depends(get_current_user)):
 
 @app.get("/")
 def root():
-    return {"message": "FastAPI Auth Starter is running"}
+    return {"message": "PostgreSQL Backup & Recovery System is running"}
