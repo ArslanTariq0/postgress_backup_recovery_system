@@ -1,12 +1,3 @@
-"""
-Turns BackupSchedule rows into actual backups.
-
-Every SCHEDULER_INTERVAL_MINUTES, check_due_schedules():
-  1. finds active schedules whose next_run_at has passed,
-  2. creates a Backup row + kicks off perform_backup for each,
-  3. advances next_run_at using the cron expression,
-  4. runs retention cleanup for that schedule's connection.
-"""
 import logging
 from datetime import datetime, timedelta, timezone
 from pathlib import Path

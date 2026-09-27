@@ -294,4 +294,6 @@ async def test_connection(connection: models.DatabaseConnection) -> tuple[bool, 
     except FileNotFoundError:
         return False, f"'{PSQL_BIN}' was not found on PATH. Install the PostgreSQL client tools."
     except Exception as exc:  # noqa: BLE001
-        return False, f"Unexpected error: {exc}"[:2000]
+        import traceback
+        traceback.print_exc()
+        return False, f"Unexpected error: {type(exc).__name__}: {exc}"[:2000]
